@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "218058031453",
+    "project_id": "coffee-diary-18c06",
+    "storage_bucket": "coffee-diary-18c06.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218058031453:android:0103c711009c5b9cc7a8b4",
+        "android_client_info": {
+          "package_name": "com.example.coffeedairy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3JAhF00ed5alIfB9jZ0wszJvy4r3z3qk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
