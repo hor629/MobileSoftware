@@ -24,7 +24,7 @@ class InfoFragment : Fragment() {
     ): View? {
         val rootView = inflater.inflate(R.layout.activity_info, container, false)
 
-        val recyclerView = rootView.findViewById<RecyclerView>(R.id.topLayout)
+        val recyclerView = rootView.findViewById<RecyclerView>(R.id.infoRecyclerView)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         infoAdapter = InfoAdapter(emptyList())
         recyclerView.adapter = infoAdapter
