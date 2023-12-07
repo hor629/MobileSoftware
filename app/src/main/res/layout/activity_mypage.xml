@@ -1,6 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MapActivity"
+    android:background="#AC9176">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- Title(My Page) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical"
+                android:layout_margin="30dp">
+
+                <TextView
+                    android:id="@+id/MyPageTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MyPage"
+                    android:textColor="#ffffff"
+                    android:textSize="50dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="30dp"/>
+            </LinearLayout>
+
+            <!-- My Profile -->
+            <LinearLayout
+                android:id="@+id/ProfileLayout"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:orientation="vertical"
+                android:background="@drawable/radius"
+                android:padding="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- 유저 프로필 사진 -->
+                    <ImageView
+                        android:id="@+id/MyImage"
+                        android:background="@drawable/user"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginBottom="20px"
+                        />
+
+                    <!-- 유저 닉네임, 태그 -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="20px"
+                        android:layout_marginLeft="30px">
+
+                        <TextView
+                            android:id="@+id/MyName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="User Name >"
+                            android:textSize="30sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:id="@+id/MyTag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="#커피 중독"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/tag"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 나의 커피나무, 뱃지 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_margin="30dp">
+
+                <!-- 나의 커피나무 -->
+                <LinearLayout
+                    android:id="@+id/CoffeeTreeLayout"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:orientation="vertical"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/radius">
+
+                    <ImageView
+                        android:id="@+id/CoffeeTreeImage"
+                        android:background="@drawable/coffeetree"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20px"/>
+
+                    <TextView
+                        android:id="@+id/CoffeeTreeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="나의 커피나무"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"/>
+                </LinearLayout>
+
+                <!-- 나의 뱃지 -->
+                <LinearLayout
+                    android:id="@+id/BadgeLayout"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/radius">
+
+                    <ImageView
+                        android:id="@+id/BadgeImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="20px"
+                        android:background="@drawable/badge"/>
+
+                    <TextView
+                        android:id="@+id/BadgeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="뱃지"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:paddingLeft="10dp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

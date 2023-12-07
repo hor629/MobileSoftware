@@ -6,4 +6,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="selected">#63554b</color>
     <color name="unselected">#a9a9a9</color>
+    <color name="tag">#a9a9a9</color>
 </resources>
