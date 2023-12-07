@@ -11,7 +11,8 @@ activity_main - tab 바 problem (?)
 activity_map - Scrollbar 작동X
 <br><br>
 
-###23-12-07 THU //master push(x)<br>
+### 23-12-07 THU <br>
+// master push(x)<br>
 Feat:<br>
 activity_mypage 레이아웃<br><br>
 ![image](https://github.com/hor629/mobilesoftware/assets/102593738/6f2b3dd1-67c2-4547-aaec-81692d6eb6b6)
