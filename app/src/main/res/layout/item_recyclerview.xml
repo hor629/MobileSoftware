@@ -14,13 +14,12 @@
         android:orientation="vertical"
         android:gravity="center"
         android:background="@drawable/radius"
-        android:padding="16dp"
+        android:padding="25dp"
         android:layout_margin="20dp">
 
         <!-- Info Image -->
         <ImageView
             android:id="@+id/cafeInfoImage"
-            android:background="@drawable/ic_launcher_background"
             android:layout_width="330dp"
             android:layout_height="200dp"
             android:layout_marginBottom="20px"
@@ -32,7 +31,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Info Title"
-            android:textSize="24sp"/>
+            android:textSize="24sp"
+            android:layout_marginBottom="10dp"/>
 
         <!-- Info Content -->
         <TextView
