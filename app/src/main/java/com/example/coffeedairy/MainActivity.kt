@@ -16,7 +16,7 @@ import com.example.coffeedairy.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
-
+// 커밋용 수정사항
 class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     val db = Firebase.firestore
