@@ -1,4 +1,6 @@
-data class Info(
+package com.example.coffeedairy
+
+data class Info (
     val id: Int,
     val title: String,
     val content: String,

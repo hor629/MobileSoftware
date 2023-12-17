@@ -8,7 +8,7 @@
         android:bottomRightRadius="20dp"
         android:topLeftRadius="20dp"
         android:topRightRadius="20dp" />    <!--border-->
-<!--    <stroke-->
-<!--        android:width="2dp"-->
-<!--        android:color="#FF0000" />-->
+    <!--    <stroke-->
+    <!--        android:width="2dp"-->
+    <!--        android:color="#FF0000" />-->
 </shape>

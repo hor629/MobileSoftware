@@ -14,34 +14,34 @@
         android:padding="16dp"
         android:layout_margin="20dp">
 
-    <ImageView
-        android:id="@+id/cafeInfoImage"
-        android:layout_width="330dp"
-        android:layout_height="200dp"
-        android:layout_marginBottom="20px"
-        android:src="@drawable/ic_launcher_background"/>
+        <ImageView
+            android:id="@+id/cafeInfoImage"
+            android:layout_width="330dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20px"
+            android:src="@drawable/ic_launcher_background"/>
 
-    <TextView
-        android:id="@+id/cafeInfoTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Info Title"
-        android:textSize="24sp" />
+        <TextView
+            android:id="@+id/cafeInfoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info Title"
+            android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/cafeInfoContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@tools:sample/lorem/random"
-        android:maxLines="3"
-        android:textSize="16sp" />
+        <TextView
+            android:id="@+id/cafeInfoOverview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@tools:sample/lorem/random"
+            android:maxLines="3"
+            android:textSize="16sp" />
 
-    <Button
-        android:id="@+id/viewInfoButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="View Info Details"
-        android:backgroundTint="@color/main" />
+        <Button
+            android:id="@+id/viewInfoButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="View Info Details"
+            android:backgroundTint="@color/main" />
 
     </LinearLayout>
 </LinearLayout>

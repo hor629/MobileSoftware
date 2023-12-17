@@ -7,6 +7,7 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import android.view.ViewGroup
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.coffeedairy.databinding.ActivityCalendarBinding
 import com.prolificinteractive.materialcalendarview.CalendarDay
@@ -24,13 +25,23 @@ class CalendarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = ActivityCalendarBinding.inflate(layoutInflater, container, false)
+//        binding.calendarView.setOnDateChangedListener { widget, date, selected ->
+//            activity.let{
+//                val intent = Intent(context, DateLogActivity::class.java)
+//                startActivity(intent)
+//            }
+//        }
         binding.calendarView.setOnDateChangedListener { widget, date, selected ->
             activity.let{
                 val intent = Intent(context, DateLogActivity::class.java)
+                val year = date.year
+                val month = date.month
+                val dayOfMonth = date.day
+                intent.putExtra("year", year)
+                intent.putExtra("month", month)
+                intent.putExtra("dayOfMonth", dayOfMonth)
                 startActivity(intent)
             }
-
-            // binding.calendarView.addDecorator(EventDecorator(Collections.singleton(date)))
         }
         return binding.root
     }

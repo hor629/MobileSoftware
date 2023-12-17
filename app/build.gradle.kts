@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -42,18 +43,32 @@ android {
 }
 
 dependencies {
+
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.10.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.github.prolificinteractive:material-calendarview:2.0.1")
-    implementation("com.jakewharton.threetenabp:threetenabp:1.2.1")
-    implementation("androidx.viewpager2:viewpager2:1.0.0")
-    implementation("com.google.firebase:firebase-database:20.3.0")
-//    Google Map
-    implementation("com.google.android.gms:play-services-maps:18.0.2")
-    implementation("com.google.android.gms:play-services-location:19.0.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+
+    implementation (platform("com.google.firebase:firebase-bom:30.4.1"))
+    implementation ("com.google.android.gms:play-services-auth:20.7.0")
+    // implementation("com.google.firebase:firebase-database:20.3.0")
+    implementation("androidx.multidex:multidex:2.0.1")
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
+
+    implementation("com.google.firebase:firebase-firestore:24.9.1")
+    implementation("com.google.firebase:firebase-storage:20.3.0")
+    implementation("com.google.firebase:firebase-storage-ktx:20.3.0")
+
+    implementation("com.google.android.material:material:1.10.0")
+    implementation("com.github.prolificinteractive:material-calendarview:2.0.1")
+
+    //    Google Map
+    implementation("com.google.android.gms:play-services-maps:18.0.2")
+    implementation("com.google.android.gms:play-services-location:19.0.1")
+
+    implementation("com.github.bumptech.glide:glide:4.13.2")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.13.2")
 }

@@ -1,44 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="550dp"
     android:orientation="vertical"
-    android:gravity="center"
-    android:layout_margin="40px"
-    android:background="@color/main">
+    android:background="@drawable/radius"
+    android:padding="16dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="100dp">
 
-    <TextView
-            android:id="@+id/InfoTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Info Popup"
-            android:textColor="#ffffff"
-            android:textSize="50dp"
-            android:textStyle="bold"
-            android:layout_margin="20dp"/>
-
-    <!-- Additional Layout for Cafe Information and Search -->
+    <!-- Button to View Info Details -->
     <LinearLayout
-        android:id="@+id/topLayout"
+        android:id="@+id/Layout1"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:background="@drawable/radius"
-        android:padding="16dp"
-        android:layout_margin="20dp">
-
-        <!-- Button to View Info Details -->
-
-        <!-- Info Image -->
-
+        android:gravity="right">
         <Button
             android:id="@+id/viewInfoButton"
             android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/cancel"
             android:text="X" />
+    </LinearLayout>
+
+    <!-- Info Image -->
+    <LinearLayout
+        android:id="@+id/Layout2"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:orientation="vertical"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/cafeInfoImage"
@@ -65,6 +59,4 @@
             android:maxLines="15"
             android:textSize="16sp"/>
     </LinearLayout>
-
-
 </LinearLayout>
