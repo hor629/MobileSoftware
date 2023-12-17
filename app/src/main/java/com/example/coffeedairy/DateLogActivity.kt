@@ -205,7 +205,7 @@ class DateLogActivity: AppCompatActivity() {
                     flag = "ViewMode"
                 }
 
-                Dialog.BUTTON_NEGATIVE -> { // 취소
+                Dialog.BUTTON_NEGATIVE -> { // 취소 (이전 화면으로)
                     dialog?.dismiss()
                 }
             }
