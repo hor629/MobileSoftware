@@ -78,7 +78,7 @@
                             android:textSize="30sp"
                             android:textStyle="bold"/>
 
-                        <TextView
+                        <EditText
                             android:id="@+id/MyTag"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
