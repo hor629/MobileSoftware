@@ -15,6 +15,11 @@
         <item name="tabIndicatorHeight">0dp</item>
     </style>
 
+    <style name="toolbarTitleTheme" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="tabText">
         <item name="android:textSize">12sp</item>
         <item name="android:textStyle">bold</item>

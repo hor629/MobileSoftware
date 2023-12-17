@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topLayout"
+    android:layout_width="match_parent"
+    android:layout_height="550dp"
+    android:orientation="vertical"
+    android:background="@drawable/radius"
+    android:padding="16dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="100dp">
+
+    <!-- Button to View Info Details -->
+    <LinearLayout
+        android:id="@+id/Layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="right">
+        <Button
+            android:id="@+id/viewInfoButton"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/cancel"
+            android:text="X" />
+    </LinearLayout>
+
+    <!-- Info Image -->
+    <LinearLayout
+        android:id="@+id/Layout2"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/cafeInfoImage"
+            android:background="@drawable/ic_launcher_background"
+            android:layout_width="330dp"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20px"
+            />
+
+        <!-- Info Title -->
+        <TextView
+            android:id="@+id/cafeInfoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Info Title"
+            android:textSize="30sp"/>
+
+        <!-- Info Content -->
+        <TextView
+            android:id="@+id/cafeInfoContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@tools:sample/lorem/random"
+            android:maxLines="15"
+            android:textSize="16sp"/>
+    </LinearLayout>
+</LinearLayout>

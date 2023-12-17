@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--특정 날짜의 기록 조회를 위한 페이지-->
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main_content"
@@ -16,43 +17,95 @@
             android:layout_height="200dp"
             app:expandedTitleMarginBottom="60dp"
             app:expandedTitleMarginStart="30dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:title="Coffee name        Cafe Name">
-
-            <TextView
+            android:layout_marginEnd="30dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="50dp"
-                android:text="2023/11/30"
-                android:textSize="30sp" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/edit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="230dp"
-                android:layout_marginTop="60dp"
-                android:text="수정"
-                android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/log_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="80dp"
+                    android:text="2023/11/30"
+                    android:textSize="30sp" />
+                <EditText
+                    android:id="@+id/log_coffee_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/log_date"
+                    android:layout_alignStart="@+id/log_date"
+                    android:hint="커피 이름"
+                    />
+                <EditText
+                    android:id="@+id/log_cafe_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/log_date"
+                    android:layout_alignParentEnd="true"
+                    android:hint="카페 이름"
+                    />
+                <Button
+                    android:id="@+id/log_save"
+                    android:background="@drawable/activity_date_log_button"
+                    android:padding="5dp"
+                    android:textColor="@color/gray"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/log_date"
+                    android:layout_alignParentEnd="true"
+                    android:text="저장"
+                    android:textSize="15sp"
+                    android:visibility="visible"/>
 
-            <TextView
-                android:id="@+id/delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="280dp"
-                android:layout_marginTop="60dp"
-                android:text="삭제"
-                android:textSize="20sp" />
+                <Button
+                    android:id="@+id/log_edit"
+                    android:background="@drawable/activity_date_log_button"
+                    android:padding="5dp"
+                    android:textColor="@color/gray"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/log_save"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/log_save"
+                    android:text="수정"
+                    android:textSize="15sp"
+                    android:visibility="invisible"
+                    />
 
-            <RatingBar
-                android:id="@+id/ratingBar"
-                style="@style/Widget.AppCompat.RatingBar.Indicator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="160dp"
-                android:layout_marginTop="150dp"
-                android:isIndicator="true" />
+                <Button
+                    android:id="@+id/log_delete"
+                    android:background="@drawable/activity_date_log_button"
+                    android:padding="5dp"
+                    android:textColor="@color/gray"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/log_date"
+                    android:layout_alignParentEnd="true"
+                    android:text="삭제"
+                    android:textSize="15sp"
+                    android:visibility="invisible"
+                    />
+
+                <RatingBar
+                    android:id="@+id/log_rating"
+                    style="@style/Widget.AppCompat.RatingBar.Indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/log_cafe_name"
+                    android:layout_alignParentEnd="true"
+                    android:isIndicator="false" />
+
+            </RelativeLayout>
+
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -62,13 +115,33 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:focusable="false"
-        android:hint="내용..."
-        android:gravity="top"
-        android:scrollbars="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ImageView
+            android:id="@+id/log_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/log_upload_image"
+            />
+
+        <EditText
+            android:id="@+id/log_diary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:focusable="true"
+            android:gravity="top"
+            android:hint="내용..."
+            />
+        <!--            android:scrollbars="vertical" -->
+
+    </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

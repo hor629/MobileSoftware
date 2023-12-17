@@ -1,0 +1,18 @@
+{
+  "info1": {
+    "id": 1,
+    "title": "Coffee Shop A",
+    "content": "Description of Coffee Shop A.",
+    "overview": "Overview of Coffee Shop A.",
+    "imagePath": "path_to_image1.jpg",
+    "source": "web"
+  },
+  "info2": {
+    "id": 2,
+    "title": "Coffee Shop B",
+    "content": "Description of Coffee Shop B.",
+    "overview": "Overview of Coffee Shop B.",
+    "imagePath": "path_to_image2.jpg",
+    "source": "web"
+  }
+}
