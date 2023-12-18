@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MapActivity"
     android:background="#AC9176">
 
     <ScrollView
@@ -39,57 +38,32 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:background="@drawable/radius"
                 android:padding="16dp"
                 android:layout_margin="20dp">
 
                 <!-- Search EditText -->
                 <EditText
-                    android:id="@+id/searchEdit"
-                    android:layout_width="match_parent"
+                    android:id="@+id/editText"
+                    android:layout_width="230dp"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:hint="카페를 검색하세요."/>
-
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Search"
+                    android:backgroundTint="@color/selected"/>
             </LinearLayout>
-
-
-
-            <!--     Google Map View -->
-            <!-- Search EditText -->
-<!--            <AutoCompleteTextView-->
-<!--                android:id="@+id/searchEditText"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_alignParentTop="true"-->
-<!--                android:layout_margin="16dp"-->
-<!--                android:hint="검색어를 입력하세요" />-->
-
-            <!-- AutocompleteSupportFragment -->
-<!--            <fragment-->
-<!--                android:id="@+id/autocompleteFragment"-->
-<!--                android:name="com.google.android.libraries.places.widget.AutocompleteFragment"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:tag="autocomplete_fragment" />-->
-            <fragment android:id="@+id/autocomplete_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
-                />
 
             <fragment
                 android:id="@+id/mapFragment"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="300dp"/>
-
-            <TextView
-                android:id="@+id/textViewLocation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Location: " />
 
             <!-- Additional Layout for Cafe Information and Search -->
             <LinearLayout
@@ -106,7 +80,7 @@
                     android:id="@+id/cafeNameTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cafe Name"
+                    android:text="와플하우스"
                     android:textSize="18sp"
                     android:textStyle="bold"/>
 
@@ -115,7 +89,7 @@
                     android:id="@+id/cafeLocationTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Cafe Location"
+                    android:text="서울특별시 용산구 청파동2가 청파로45길 37"
                     android:textSize="16sp"/>
 
                 <!-- Button to View Coffee Details -->

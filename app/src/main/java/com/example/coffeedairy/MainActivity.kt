@@ -1,6 +1,7 @@
 package com.example.coffeedairy
 
 import InfoFragment
+import MapFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -52,4 +53,5 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }
