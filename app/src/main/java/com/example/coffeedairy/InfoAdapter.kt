@@ -11,7 +11,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import java.util.Locale
 
 class InfoAdapter(private var infoList: List<Info>, private val context: Context) : RecyclerView.Adapter<InfoAdapter.ViewHolder>() {
 
@@ -25,7 +24,7 @@ class InfoAdapter(private var infoList: List<Info>, private val context: Context
         notifyDataSetChanged()
     }
 
-    // 검색 기능 추가
+    //검색 기능 추가
     fun filterResults(query: String) {
         filteredInfoList = if (query.isBlank()) {
             infoList
@@ -35,12 +34,6 @@ class InfoAdapter(private var infoList: List<Info>, private val context: Context
         }
         notifyDataSetChanged()
     }
-
-
-//    fun updateData(newInfoList: List<Info>) {
-//        infoList = newInfoList
-//        notifyDataSetChanged()
-//    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_info_recyclerview, parent, false)

@@ -44,7 +44,7 @@
                 android:layout_height="280dp"
                 android:orientation="vertical"
                 android:background="@drawable/radius"
-                android:padding="30dp"
+                android:padding="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp">
@@ -56,9 +56,9 @@
                     <!-- 유저 프로필 사진 -->
                     <ImageView
                         android:id="@+id/MyImage"
-                        android:background="@drawable/user"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:background="@drawable/coffeebear"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:layout_marginBottom="20px"
                         />
 
@@ -70,11 +70,12 @@
                         android:layout_marginTop="20px"
                         android:layout_marginLeft="30px">
 
-                        <TextView
+                        <EditText
                             android:id="@+id/MyName"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="User Name >"
+                            android:text="라떼곰 >"
+                            android:textColor="@color/selected"
                             android:textSize="30sp"
                             android:textStyle="bold"/>
 
@@ -95,7 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:layout_gravity="center"
+                android:gravity="center"
                 android:layout_margin="30dp">
 
                 <!-- 나의 커피나무 -->
@@ -104,14 +105,16 @@
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:orientation="vertical"
+                    android:gravity="center"
                     android:layout_marginRight="15dp"
+                    android:padding="15dp"
                     android:background="@drawable/radius">
 
                     <ImageView
                         android:id="@+id/CoffeeTreeImage"
-                        android:background="@drawable/coffeetree"
+                        android:background="@drawable/coffeebin"
                         android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_height="90dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20px"/>
 
@@ -121,8 +124,7 @@
                         android:layout_height="wrap_content"
                         android:text="나의 커피나무"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:paddingLeft="10dp"/>
+                        android:textStyle="bold"/>
                 </LinearLayout>
 
                 <!-- 나의 뱃지 -->
@@ -131,13 +133,14 @@
                     android:layout_width="160dp"
                     android:layout_height="160dp"
                     android:orientation="vertical"
-                    android:layout_marginLeft="15dp"
+                    android:gravity="center"
+                    android:padding="15dp"
                     android:background="@drawable/radius">
 
                     <ImageView
                         android:id="@+id/BadgeImage"
                         android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_height="90dp"
                         android:layout_gravity="center"
                         android:layout_marginBottom="20px"
                         android:background="@drawable/badge"/>
@@ -148,8 +151,7 @@
                         android:layout_height="wrap_content"
                         android:text="뱃지"
                         android:textSize="20sp"
-                        android:textStyle="bold"
-                        android:paddingLeft="10dp"/>
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

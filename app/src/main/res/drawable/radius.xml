@@ -11,4 +11,5 @@
 <!--    <stroke-->
 <!--        android:width="2dp"-->
 <!--        android:color="#FF0000" />-->
+    <!-- 그림자 추가 -->
 </shape>

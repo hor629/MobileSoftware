@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/topLayout"
     android:layout_width="match_parent"
-    android:layout_height="550dp"
+    android:layout_height="300dp"
     android:orientation="vertical"
     android:background="@drawable/radius"
     android:padding="25dp"
@@ -13,7 +13,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
@@ -21,7 +21,7 @@
         <LinearLayout
             android:id="@+id/Layout1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="280dp"
             android:orientation="vertical"
             android:gravity="right">
             <Button
@@ -36,7 +36,7 @@
         <LinearLayout
             android:id="@+id/Layout2"
             android:layout_width="match_parent"
-            android:layout_height="550dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
 
