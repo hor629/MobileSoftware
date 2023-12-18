@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/topLayout"
+    android:layout_width="350dp"
+    android:layout_height="550dp"
+    android:orientation="vertical"
+    android:background="@drawable/radius"
+    android:padding="25dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="100dp">
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/Layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="right">
+                        <Button
+                            android:id="@+id/Button"
+                            android:layout_width="55dp"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/cancel"
+                            android:text="X" />
+                </LinearLayout>
+
+                <!-- Badge Title -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="뱃지를 모아보세요!"/>
+
+                <!-- RecyclerView for Badge Items -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="@drawable/radius">
+
+                        <!-- Badge Item Image -->
+                        <ImageView
+                            android:id="@+id/badgeImage5days"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/badge5days" />
+
+                        <!-- Badge Item Name -->
+                        <TextView
+                            android:id="@+id/badgeName5days"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_toRightOf="@+id/badgeImage5days"
+                            android:text="커피와의 만남"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="15dp" />
+
+                        <TextView
+                            android:id="@+id/badgeDescription5days"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/badgeName5days"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toRightOf="@+id/badgeImage5days"
+                            android:text="5일 동안 커피와 함께했어요"
+                            android:textSize="14sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:background="@drawable/radius">
+
+                        <!-- Badge Item Image -->
+                        <ImageView
+                            android:id="@+id/badgeImage10days"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/badge10days" />
+
+                        <!-- Badge Item Name -->
+                        <TextView
+                            android:id="@+id/badgeName10days"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_toRightOf="@+id/badgeImage10days"
+                            android:text="커피와의 일상"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginStart="15dp" />
+
+                        <TextView
+                            android:id="@+id/badgeDescription10days"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/badgeName10days"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_toRightOf="@+id/badgeImage10days"
+                            android:text="10일 동안 커피와 함께했어요"
+                            android:textSize="14sp" />
+                </RelativeLayout>
+        </LinearLayout>
+</LinearLayout>

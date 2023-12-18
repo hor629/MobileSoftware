@@ -15,8 +15,22 @@ class InfoAdapter(private var infoList: List<Info>, private val context: Context
 
     private var alertDialog: AlertDialog? = null  // AlertDialog를 클래스 레벨에서 선언
 
+    private var filteredInfoList: List<Info> = infoList  // 검색 결과를 담을 리스트 추가
+
     fun updateData(newInfoList: List<Info>) {
         infoList = newInfoList
+        filterResults("")  // 초기에는 전체 목록을 보여줌
+        notifyDataSetChanged()
+    }
+
+    //검색 기능 추가
+    fun filterResults(query: String) {
+        filteredInfoList = if (query.isBlank()) {
+            infoList
+        } else {
+            val regex = Regex(".*${query.trim()}.*", RegexOption.IGNORE_CASE)
+            infoList.filter { regex.containsMatchIn(it.title) }
+        }
         notifyDataSetChanged()
     }
 
@@ -26,7 +40,7 @@ class InfoAdapter(private var infoList: List<Info>, private val context: Context
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val info = infoList[position]
+        val info = filteredInfoList[position]
 
         Glide.with(holder.itemView.context)
             .load(info.imagePath)

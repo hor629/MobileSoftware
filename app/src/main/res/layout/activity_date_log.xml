@@ -1,147 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--특정 날짜의 기록 조회를 위한 페이지-->
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main_content"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:layout_margin="20dp">
 
-    <com.google.android.material.appbar.AppBarLayout
+    <TextView
+        android:id="@+id/log_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:text="2023/11/30"
+        android:textSize="30sp" />
+    <EditText
+        android:id="@+id/log_coffee_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log_date"
+        android:layout_alignStart="@+id/log_date"
+        android:hint="커피 이름"
+        />
+    <EditText
+        android:id="@+id/log_cafe_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log_date"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:hint="카페 이름"
+        />
+    <Button
+        android:id="@+id/log_save"
+        android:background="@drawable/activity_date_log_button"
+        android:padding="5dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/gray"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/log_date"
+        android:layout_alignParentEnd="true"
+        android:text="저장"
+        android:textSize="15sp"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/log_edit"
+        android:background="@drawable/activity_date_log_button"
+        android:padding="5dp"
+        android:textColor="@color/gray"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/log_save"
+        android:layout_marginEnd="10dp"
+        android:layout_toStartOf="@+id/log_save"
+        android:text="수정"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        />
+
+    <Button
+        android:id="@+id/log_delete"
+        android:background="@drawable/activity_date_log_button"
+        android:padding="5dp"
+        android:layout_marginEnd="20dp"
+        android:textColor="@color/gray"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/log_date"
+        android:layout_alignParentEnd="true"
+        android:text="삭제"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        />
+
+    <RatingBar
+        android:id="@+id/log_rating"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_below="@id/log_cafe_name"
+        android:layout_alignParentEnd="true"
+        android:isIndicator="false" />
+
+    <ScrollView
+        android:layout_marginTop="240dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/appbar"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:expandedTitleMarginBottom="60dp"
-            app:expandedTitleMarginStart="30dp"
-            android:layout_marginEnd="30dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/log_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginTop="80dp"
-                    android:text="2023/11/30"
-                    android:textSize="30sp" />
-                <EditText
-                    android:id="@+id/log_coffee_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/log_date"
-                    android:layout_alignStart="@+id/log_date"
-                    android:hint="커피 이름"
-                    />
-                <EditText
-                    android:id="@+id/log_cafe_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/log_date"
-                    android:layout_alignParentEnd="true"
-                    android:hint="카페 이름"
-                    />
-                <Button
-                    android:id="@+id/log_save"
-                    android:background="@drawable/activity_date_log_button"
-                    android:padding="5dp"
-                    android:textColor="@color/gray"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/log_date"
-                    android:layout_alignParentEnd="true"
-                    android:text="저장"
-                    android:textSize="15sp"
-                    android:visibility="visible"/>
-
-                <Button
-                    android:id="@+id/log_edit"
-                    android:background="@drawable/activity_date_log_button"
-                    android:padding="5dp"
-                    android:textColor="@color/gray"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/log_save"
-                    android:layout_marginEnd="10dp"
-                    android:layout_toStartOf="@+id/log_save"
-                    android:text="수정"
-                    android:textSize="15sp"
-                    android:visibility="invisible"
-                    />
-
-                <Button
-                    android:id="@+id/log_delete"
-                    android:background="@drawable/activity_date_log_button"
-                    android:padding="5dp"
-                    android:textColor="@color/gray"
-                    android:minWidth="0dp"
-                    android:minHeight="0dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/log_date"
-                    android:layout_alignParentEnd="true"
-                    android:text="삭제"
-                    android:textSize="15sp"
-                    android:visibility="invisible"
-                    />
-
-                <RatingBar
-                    android:id="@+id/log_rating"
-                    style="@style/Widget.AppCompat.RatingBar.Indicator"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/log_cafe_name"
-                    android:layout_alignParentEnd="true"
-                    android:isIndicator="false" />
-
-            </RelativeLayout>
-
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin" />
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <ImageView
-            android:id="@+id/log_image"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:src="@drawable/log_upload_image"
-            />
-
-        <EditText
-            android:id="@+id/log_diary"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:focusable="true"
-            android:gravity="top"
-            android:hint="내용..."
-            />
-        <!--            android:scrollbars="vertical" -->
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    </LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <ImageView
+                android:id="@+id/log_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/log_upload_image"
+                />
+
+            <EditText
+                android:id="@+id/log_diary"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:focusable="true"
+                android:gravity="top"
+                android:hint="내용..."
+                android:layout_marginBottom="200dp"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+<!--<androidx.coordinatorlayout.widget.CoordinatorLayout-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    android:id="@+id/main_content"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:layout_margin="20dp">-->
+
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="220dp"-->
+<!--        >-->
+
+<!--        <com.google.android.material.appbar.CollapsingToolbarLayout-->
+<!--            android:id="@+id/appbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            app:expandedTitleMarginBottom="60dp"-->
+<!--            app:expandedTitleMarginStart="30dp"-->
+<!--            android:layout_marginEnd="30dp"-->
+<!--            app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+<!--            -->
+
+
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="?attr/actionBarSize"-->
+<!--                app:layout_collapseMode="pin" />-->
+<!--        </com.google.android.material.appbar.CollapsingToolbarLayout>-->
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--</androidx.coordinatorlayout.widget.CoordinatorLayout>-->

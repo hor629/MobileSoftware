@@ -31,8 +31,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker for a default location (e.g., San Francisco, CA)
-        val defaultLocation = LatLng(37.7749, -122.4194)
+        // 디폴트 위치를 서울 숙명여자대학교로 설정
+        val defaultLocation = LatLng(37.5449, 126.9647)
         mMap.addMarker(MarkerOptions().position(defaultLocation).title("Default Marker"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 15f))
     }

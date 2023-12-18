@@ -2,7 +2,6 @@ package com.example.coffeedairy
 
 import InfoFragment
 import MapFragment
-import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -16,22 +15,10 @@ import com.example.coffeedairy.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
-// 커밋용 수정사항
+
 class MainActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     val db = Firebase.firestore
-
-    class MyFragmentPagerAdapter(activity: FragmentActivity): FragmentStateAdapter(activity){
-        val fragments: List<Fragment>
-
-        init{
-            fragments = listOf(CalendarFragment(),
-                LogFragment(), MapFragment(), InfoFragment(), MyPageFragment())
-        }
-
-        override fun getItemCount(): Int = fragments.size
-        override fun createFragment(position: Int): Fragment = fragments[position]
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +28,9 @@ class MainActivity : AppCompatActivity() {
         binding.viewpager.adapter = MyFragmentPagerAdapter(this)
 
         val tabTitles = listOf("캘린더", "기록", "지도", "정보", "마이페이지")
-        val tabIcon = listOf(R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background, R.drawable.ic_launcher_background,
-            R.drawable.ic_launcher_background, R.drawable.ic_launcher_background)
+        val tabIcon = listOf(R.drawable.calendar_tab_icon,
+            R.drawable.log_tab_icon, R.drawable.map_tab_icon,
+            R.drawable.info_tab_icon, R.drawable.mypage_tab_icon)
         TabLayoutMediator(binding.tabs, binding.viewpager){
                 tab, position -> tab.text = tabTitles[position]
             tab.setIcon(tabIcon[position])
@@ -67,6 +54,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         this.onBackPressedDispatcher.addCallback(this, callback)
+    }
+
+    class MyFragmentPagerAdapter(activity: FragmentActivity): FragmentStateAdapter(activity){
+        val fragments: List<Fragment>
+
+        init{
+            fragments = listOf(CalendarFragment(),
+                LogFragment(), MapFragment(), InfoFragment(), MyPageFragment())
+        }
+
+        override fun getItemCount(): Int = fragments.size
+        override fun createFragment(position: Int): Fragment = fragments[position]
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

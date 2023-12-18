@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.LinearLayoutCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.MultiTransformation
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -52,23 +53,6 @@ class DateLogActivity: AppCompatActivity() {
 
         binding.logDate.text = sdf.format(calendar.time)
 
-        val storage: FirebaseStorage =
-            FirebaseStorage.getInstance("gs://coffee-diary-18c06.appspot.com")
-        val storageReference = storage.reference
-        val pathReference = storageReference.child("images/${sdfID.format(calendar.time)}")
-
-        val multiOption = MultiTransformation(
-            CenterCrop(),
-            RoundedCorners(20)
-        )
-
-        pathReference.downloadUrl.addOnSuccessListener { uri ->
-            Glide.with(binding.logImage)
-                .load(uri)
-                .apply(RequestOptions().transform(multiOption))
-                .into(binding.logImage)
-        }
-
         docRef.get()
             .addOnSuccessListener { document ->
                 if (document.data?.get("coffeeName") != null) { // view mode
@@ -94,7 +78,6 @@ class DateLogActivity: AppCompatActivity() {
                     binding.logDate.text = sdf.format(calendar.time)
                     binding.logCoffeeName.isEnabled = true
                     binding.logCafeName.isEnabled = true
-                    binding.logRating.isEnabled = true
                     binding.logDiary.isEnabled = true
                     binding.logImage.isClickable = true
                     flag = "EditMode"
@@ -102,6 +85,7 @@ class DateLogActivity: AppCompatActivity() {
                 }
             }
 
+        // 사진 업로드
         val requestGalleryLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         )
@@ -120,6 +104,23 @@ class DateLogActivity: AppCompatActivity() {
 
                 storageRef?.putFile(uriPhoto!!)?.addOnSuccessListener {
                     Toast.makeText(this, "이미지 업로드 성공", Toast.LENGTH_SHORT).show()
+                    // 파이어베이스 저장공간에서 사진 불러오기
+                    val storage: FirebaseStorage =
+                        FirebaseStorage.getInstance("gs://coffee-diary-18c06.appspot.com")
+                    val storageReference = storage.reference
+                    val pathReference = storageReference.child("images/${sdfID.format(calendar.time)}")
+
+                    val multiOption = MultiTransformation(
+                        CenterCrop(),
+                        RoundedCorners(20)
+                    )
+
+                    pathReference.downloadUrl.addOnSuccessListener { uri ->
+                        Glide.with(binding.logImage)
+                            .load(uri)
+                            .apply(RequestOptions().transform(multiOption))
+                            .into(binding.logImage)
+                    }
                 }?.addOnFailureListener {
                     Toast.makeText(this, "이미지 업로드 실패", Toast.LENGTH_SHORT).show()
                 }
@@ -127,6 +128,24 @@ class DateLogActivity: AppCompatActivity() {
             } catch (e: Exception) {
                 e.printStackTrace()
             }
+        }
+
+        // 파이어베이스 저장공간에서 사진 불러오기
+        val storage: FirebaseStorage =
+            FirebaseStorage.getInstance("gs://coffee-diary-18c06.appspot.com")
+        val storageReference = storage.reference
+        val pathReference = storageReference.child("images/${sdfID.format(calendar.time)}")
+
+        val multiOption = MultiTransformation(
+            CenterCrop(),
+            RoundedCorners(20)
+        )
+
+        pathReference.downloadUrl.addOnSuccessListener { uri ->
+            Glide.with(binding.logImage)
+                .load(uri)
+                .apply(RequestOptions().transform(multiOption))
+                .into(binding.logImage)
         }
 
         binding.logImage.setOnClickListener {
@@ -146,6 +165,7 @@ class DateLogActivity: AppCompatActivity() {
             binding.logCafeName.isEnabled = true
             binding.logRating.isEnabled = true
             binding.logDiary.isEnabled = true
+            binding.logImage.isClickable = true
             flag = "EditMode"
         }
 
@@ -187,12 +207,13 @@ class DateLogActivity: AppCompatActivity() {
                 binding.logDelete.visibility = android.view.View.VISIBLE
                 binding.logCoffeeName.isEnabled = false
                 binding.logCafeName.isEnabled = false
-                binding.logRating.isEnabled = false
                 binding.logDiary.isEnabled = false
+                binding.logImage.isClickable = false
                 flag = "ViewMode"
             }
         }
 
+        // 뒤로가기 버튼
         val eventHandler = DialogInterface.OnClickListener { dialog, which ->
             when (which) {
                 Dialog.BUTTON_POSITIVE -> { // 저장하지 않고 나가기
@@ -202,7 +223,14 @@ class DateLogActivity: AppCompatActivity() {
                     binding.logCoffeeName.isEnabled = false
                     binding.logCafeName.isEnabled = false
                     binding.logDiary.isEnabled = false
+                    binding.logImage.isClickable = false
                     flag = "ViewMode"
+                    docRef.get()
+                        .addOnSuccessListener { document ->
+                            if (document.data?.get("coffeeName") == null)
+                                fbStorage?.reference?.child("images/${sdfID.format(calendar.time)}")
+                                    ?.delete()
+                        }
                 }
 
                 Dialog.BUTTON_NEGATIVE -> { // 취소 (이전 화면으로)

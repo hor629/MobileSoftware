@@ -37,7 +37,8 @@
         </activity>
         <activity
             android:name=".DateLogActivity"
-            android:exported="false">
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan">
         </activity>
     </application>
 

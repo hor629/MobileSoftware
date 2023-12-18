@@ -25,12 +25,9 @@ class CalendarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = ActivityCalendarBinding.inflate(layoutInflater, container, false)
-//        binding.calendarView.setOnDateChangedListener { widget, date, selected ->
-//            activity.let{
-//                val intent = Intent(context, DateLogActivity::class.java)
-//                startActivity(intent)
-//            }
-//        }
+
+        val uid = arguments?.getString("uid")
+
         binding.calendarView.setOnDateChangedListener { widget, date, selected ->
             activity.let{
                 val intent = Intent(context, DateLogActivity::class.java)
