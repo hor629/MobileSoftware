@@ -1,9 +1,12 @@
 import android.content.Context
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +21,7 @@ import java.io.InputStreamReader
 class InfoFragment : Fragment() {
 
     private lateinit var infoAdapter: InfoAdapter
+    private lateinit var searchEditText: EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +33,24 @@ class InfoFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         infoAdapter = InfoAdapter(emptyList(), requireContext())
         recyclerView.adapter = infoAdapter
+
+        searchEditText = rootView.findViewById(R.id.searchEditText)
+
+        // TextWatcher를 통해 EditText의 텍스트 변경 감지
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+                // 이전 텍스트 변경 전에 수행할 작업
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                // 텍스트 변경이 있을 때마다 호출
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                // 텍스트 변경 후에 호출되며, 여기에서 검색 기능을 호출
+                infoAdapter.filterResults(s.toString())
+            }
+        })
 
         // Dummy 데이터 로드
         GlobalScope.launch {

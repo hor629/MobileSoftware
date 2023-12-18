@@ -1,9 +1,10 @@
+package com.example.coffeedairy
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.coffeedairy.R
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -36,4 +37,11 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mMap.addMarker(MarkerOptions().position(defaultLocation).title("Default Marker"))
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 15f))
     }
+
+    companion object {
+        fun setMarkerAtLocation(location: LatLng) {
+            // Implement this if needed
+        }
+    }
 }
+

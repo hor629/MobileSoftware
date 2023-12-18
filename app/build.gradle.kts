@@ -21,7 +21,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -53,9 +53,8 @@ dependencies {
 //    Google Map
     implementation("com.google.android.gms:play-services-maps:18.0.2")
     implementation("com.google.android.gms:play-services-location:21.0.1")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+
 //    검색엔진
 //    implementation ("com.google.android.gms:play-services-places:17.0.0")
 //    implementation ("com.google.android.libraries.places:places:2.8.0")
@@ -64,6 +63,7 @@ dependencies {
 
 //    Glide
     implementation ("com.github.bumptech.glide:glide:4.12.0")
+    implementation("com.google.android.libraries.places:places:3.3.0")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
 

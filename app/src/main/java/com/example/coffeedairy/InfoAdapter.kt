@@ -41,19 +41,24 @@ class InfoAdapter(private var infoList: List<Info>, private val context: Context
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val info = filteredInfoList[position]
+        if (filteredInfoList.isNotEmpty()) {
+            val info = filteredInfoList[position]
 
-        Glide.with(holder.itemView.context)
-            .load(info.imagePath)
-            .into(holder.infoImage)
-        holder.infoTitle.text = info.title
-        holder.infoOverView.text = info.overview
+            Glide.with(holder.itemView.context)
+                .load(info.imagePath)
+                .into(holder.infoImage)
+            holder.infoTitle.text = info.title
+            holder.infoOverView.text = info.overview
 
-        holder.viewInfoButton.setOnClickListener {
-            // 클릭된 아이템에 해당하는 정보를 팝업창으로 표시
-            showInfoPopup(info)
+            holder.viewInfoButton.setOnClickListener {
+                // 클릭된 아이템에 해당하는 정보를 팝업창으로 표시
+                showInfoPopup(info)
+            }
+        } else {
+            // filteredInfoList가 비어 있는 경우를 처리하는 로직 추가
         }
     }
+
 
     private fun showInfoPopup(info: Info) {
         // AlertDialog 빌더 생성
