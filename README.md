@@ -23,6 +23,20 @@
 ![image](https://github.com/hor629/mobilesoftware/assets/102593738/70c86546-4c1f-4981-bea6-4b60542b0996)
 ![image](https://github.com/hor629/mobilesoftware/assets/102593738/28379289-a78e-4d33-87aa-782e6bd268e8)
 
-
+<br>
 
 ### 🖥 시현 영상
+<br><br>
+
+## 개발환경
+- <strong>개발도구</strong>: Android Studio
+- <strong>사용언어</strong>: Kotlin
+- <strong>개발 파트</strong>
+  - 문소빈: 캘린더, 기록, 마이페이지
+  - 유진주: 지도, 정보, 마이페이지
+- <strong>협업 툴</strong>
+  - 소스공유: Github
+  - 회의 및 기록: Notion
+  - 디자인: Figma
+ 
+  
