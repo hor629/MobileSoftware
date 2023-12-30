@@ -18,6 +18,11 @@
 
 ### 최종 프로젝트 발표 pdf
 2023<br> [모바일소프트웨어_7조_발표자료.pdf](https://github.com/hor629/mobilesoftware/files/13798374/_7._.pdf)
-<br>
+<br><br>
+![image](https://github.com/hor629/mobilesoftware/assets/102593738/9d0d94e7-2d65-40e8-9e66-46ad8694e3ec)
+![image](https://github.com/hor629/mobilesoftware/assets/102593738/70c86546-4c1f-4981-bea6-4b60542b0996)
+![image](https://github.com/hor629/mobilesoftware/assets/102593738/28379289-a78e-4d33-87aa-782e6bd268e8)
 
-### 시현 영상
+
+
+### 🖥 시현 영상
