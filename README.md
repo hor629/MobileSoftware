@@ -28,7 +28,7 @@
 ### 🖥 시현 영상
 <br><br>
 
-## 개발환경
+## ⚙ 개발환경
 - <strong>개발도구</strong>: Android Studio
 - <strong>사용언어</strong>: Kotlin
 - <strong>개발 파트</strong>
